@@ -1,13 +1,19 @@
 class Account {
   constructor(balance =  0) {
-  this.balance = balance
+    this.balance = balance
   }
-  credit(cash) {
-    return this.balance += cash
+ 
+  credit(cash, date) {
+    let num = cash.toFixed(2)
+    let totalBalance = (this.balance += cash).toFixed(2)
+    return `${date} || ${num} || || ${totalBalance}`
   }
 
-  debit(cash) {
-    return this.balance -= cash
+  debit(cash, date) {
+    let num = cash.toFixed(2)
+    let totalBalance = (this.balance -= cash).toFixed(2)
+    return `${date} || || ${num} || ${totalBalance}`
   }
+  
 }
 module.exports =Account
