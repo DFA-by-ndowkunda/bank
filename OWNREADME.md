@@ -7,11 +7,12 @@ This project will be modelling this withdraw and deposit of money into a bank ac
 
 |Objects| Properties | Messages | Context | Output
 |-------|-------------|---------|---------|---------
-|Bank   |statement@str|print()  |         |statement@str
-|Bank   |date@date    |formatDate()|get date for current balance| date@str
+|Bank   |statement@str|print()  |         |statements@str
 |-------|------------ |---------|----------|---------- 
-|Account|balance@int  |credit() |         |balance@int
-|Account|''           |debit () |         |balance@int
+|Account   |date@str     |                |              | date@str
+|Account   |cash@int   |                |              |  cash@float
+|Account|balance@int  |credit(cash) |         |statement@str
+|Account|''           |debit (cash) |         |statement@str
 
 # Setup
 
