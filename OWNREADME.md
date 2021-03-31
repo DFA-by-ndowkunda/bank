@@ -25,7 +25,7 @@ To run program
 
  2. clone and open folder in code editor
  ```
- $ git clone <https://github.com/ndowkunda/bank-challenge.git> && cd bitmap-editor-challenge
+ $ git clone <https://github.com/ndowkunda/bank-challenge.git> && cd bank-challenge
 
  ```
  3. Install project dependencies
