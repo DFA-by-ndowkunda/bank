@@ -1,10 +1,8 @@
 class Bank {
-  constructor() {
-    this.statement = 'date || credit || debit || balance'
-    this.date = new Date();
-  }
-  printStatement() {
-    
+  // generate statement with headings
+  print(...statement) {
+    let title = 'date || credit || debit || balance'
+    return title +'\n'+ statement
   }
 }
 module.exports = Bank
