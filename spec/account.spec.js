@@ -5,16 +5,16 @@ describe('Account methods', function () {
     //setup
     //execute
     let account = new Account(1000)
-    result = account.credit(500)
+    result = account.credit(500,'13/01/2012')
     //verify
-    expect(result).toEqual(1500);
+    expect(result).toEqual('13/01/2012 || 500.00 || || 1500.00'); 
   });
-    it('Expecting debit() to remove money to current balance', function () {
+    it('Expecting debit() to remove money from current balance', function () {
     //setup
     //execute
      let account = new Account(1000)
-     result = account.debit(500)
+     result = account.debit(500,'14/01/2012')
     //verify
-     expect(result).toEqual(500); 
+      expect(result).toEqual('14/01/2012 || || 500.00 || 500.00'); 
 });
 });
