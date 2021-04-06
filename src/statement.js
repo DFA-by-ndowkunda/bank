@@ -1,11 +1,17 @@
 class Statement {
-  constructor() {
-    this.transactions = []
+  constructor(transactions) {
+    this.transactions = transactions
+   
   }
   // generate statement with headings
-  print(...statement) {
-    let title = 'date || credit || debit || balance'
-    return title +'\n'+ statement
+  print() {
+    let statement  = 'date || credit || debit || balance';
+    for (let i = this.transactions.length -1;  i >=0;  i-- ){
+       statement+=`\n${this.transactions[i]}`
+    }
+       return statement
   }
+    
+  
 }
 module.exports = Statement
