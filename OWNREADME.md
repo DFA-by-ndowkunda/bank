@@ -7,13 +7,16 @@ This project will be modelling this withdraw and deposit of money into a bank ac
 
 |Objects| Properties | Messages | Context | Output
 |-------|-------------|---------|---------|---------
-|Bank   |statement@str|print(statement@str)  |         |statements@str
+|Transaction| date@str |               |         | 
+| ''           | amount@int |               |         | 
+| ''           | activity@str |               |         | 
+| ''           |             |         |         |
 |-------|------------ |---------|----------|---------- 
-|Deposit  | balance@int   | credit()  |              | cash@float
-|-------|------------ |---------|----------|---------- 
-|Withdrawal |balance@int  | debit()  |              | cash@float
-|-------|------------ |---------|----------|---------- 
-| Date |date@str  | getDate() |             |date@str 
+|Account|transaction |storeTransaction()|              |transaction@array
+|-------|-------------|---------|----------|------------
+|Statement |transaction@array|print()            |              |statement@str
+|-------|------------|---------|----------|---------- 
+|               |             |                |             | 
 
 # Setup
 
