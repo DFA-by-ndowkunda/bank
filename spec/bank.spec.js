@@ -1,17 +1,32 @@
-const Account = require('../src/account.js')
-const Bank = require('../src/bank.js')
-describe('Bank methods', function () {
+const Bank = require('./bank.js')
+const Transaction = require('./transaction.js')
+
+describe('Bank tests', function () {
+it('Expecting bank balance to be updated', function () {
+let bank = new Bank()
+let transaction = new Transaction('deposit',1000)
+bank.deposit('14/01/2012', transaction)
+let result = bank.getBalance()
+expect(result).toEqual(1000)
+})
   
-  it('Expecting print() to show each account statement ', function () {
-    //setup
-    //execute
-    let account = new Account(0)
-    let bank = new Bank()
-    let statement3 = account.credit(1000,'10/01/2012')
-    let statement2 = account.credit(2000, '13/01/2012')
-    let statement1 = account.debit(500, '14/01/2012')
-    let result = bank.print(`${statement1}\n${statement2}\n${statement3}`)
-    //verify
-    expect(result).toEqual('date || credit || debit || balance\n14/01/2012 || || 500.00 || 2500.00\n13/01/2012 || 2000.00 || || 3000.00\n10/01/2012 || 1000.00 || || 1000.00');
-});
-});
+it('Expecting bank balance to be updated', function () {
+let bank = new Bank(0)
+let transaction = new Transaction('withdraw', 500)
+bank.withdraw('13/01/2012', transaction)
+let result = bank.getBalance()
+expect(result).toEqual(500)
+})
+
+it('Expecting transactions to be stored in array', function () {
+let bank = new Bank(500)
+let transaction = new Transaction('withdraw', 500)
+let transaction2 = new Transaction('deposit',1000)
+bank.withdraw('13/01/2012', transaction)
+bank.deposit('12/02/2012',transaction2)
+let result = bank.getTransactions()
+expect(result).toEqual([13/01/2012 ||  || 500.00 || 0.00],[12/01/2012 ||1000.00 || || 500.00])
+
+})
+
+})
