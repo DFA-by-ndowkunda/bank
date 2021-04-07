@@ -13,7 +13,7 @@ let deposit2 = new Transaction('14/01/2012','deposit', 1000)
 result = deposit2.amount
 expect(result).toEqual(1000)
 });
-  it('Expecting an amount to be deposited on a certain date', function () {
+it('Expecting an amount to be deposited on a certain date', function () {
 let deposit3 = new Transaction('14/01/2012','deposit', 1000)
 result = deposit3.date
 expect(result).toEqual('14/01/2012')
