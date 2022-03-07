@@ -1,29 +1,56 @@
 # Bank
+This project will be modelling this withdraw and deposit of money into a bank account using Object-Oriented design principles and test driven development.
 
-This challenge helps you practice your OO design skills.
+# Problem Approach
 
-You'll work alone, and you'll also review your own code so you can practice reflecting on and improving your own work.
+## Functional Representation Domain Model
 
-## Specification
+|Objects| Properties | Messages | Context | Output
+|-------|-------------|---------|---------|---------
+|Transaction| date@str |               |         | 
+| ''           | amount@int |               |         | 
+| ''           | activity@str |               |         | 
+| ''           |             |         |         |
+|-------|------------ |---------|----------|---------- 
+|Account|transaction |storeTransaction()|              |transaction@array
+|-------|-------------|---------|----------|------------
+|Statement |transaction@array|print()            |              |statement@str
+|-------|------------|---------|----------|---------- 
+|               |             |                |             | 
 
-### Requirements
+# Setup
 
-* You should be able to interact with your code via the JavaScript console.  (You don't need to implement a command line interface that takes input from STDIN.)
-* Deposits, withdrawal.
-* Account statement (date, credit or debit amount, balance) printing.
-* Data can be kept in memory (it doesn't need to be stored to a database or anything).
+## Requirements
+To run program
+*node.js
+*npm (normally comes with Node.js)
 
-### Acceptance criteria
+## Quickstart
+ 1. fork this repo 
 
-**Given** a client makes a deposit of 1000 on 10-01-2012  
-**And** a deposit of 2000 on 13-01-2012  
-**And** a withdrawal of 500 on 14-01-2012  
-**When** she prints her bank statement  
-**Then** she would see
+ 2. clone and open folder in code editor
+ ```
+ $ git clone <https://github.com/ndowkunda/bank-challenge.git> && cd bank-challenge
 
+ ```
+ 3. Install project dependencies
+ ```
+ $ npm install
+ ```
+ 4. Run program
 ```
-date || credit || debit || balance
-14/01/2012 || || 500.00 || 2500.00
-13/01/2012 || 2000.00 || || 3000.00
-10/01/2012 || 1000.00 || || 1000.00
+node bank.js
+```
+
+## Running Tests
+This project uses the [jasmine](https://jasmine.github.io/) framework. 
+```
+$ npm test
+# or
+$ npx jasmine path/to/spec
+```
+
+## Linting code
+```
+npx eslint --fix
 ```
